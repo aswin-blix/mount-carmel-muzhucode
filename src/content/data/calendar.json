@@ -1,0 +1,18 @@
+{
+  "draft": true,
+  "academicYear": "2026–27",
+  "note": "Dates are indicative. Holidays follow the Government of Tamil Nadu school calendar; the school will confirm exact dates in the diary and circulars.",
+  "months": [
+    { "month": "June 2026", "events": [{ "title": "School reopens", "kind": "term" }, { "title": "Parent orientation for new admissions", "kind": "event" }] },
+    { "month": "July 2026", "events": [{ "title": "Club activities begin", "kind": "event" }, { "title": "First unit tests", "kind": "exam" }] },
+    { "month": "August 2026", "events": [{ "title": "Independence Day celebration (15 August)", "kind": "holiday" }] },
+    { "month": "September 2026", "events": [{ "title": "Quarterly examinations", "kind": "exam" }, { "title": "Quarterly holidays", "kind": "holiday" }, { "title": "Teachers' Day (5 September)", "kind": "event" }] },
+    { "month": "October 2026", "events": [{ "title": "Gandhi Jayanti (2 October)", "kind": "holiday" }, { "title": "Parent–teacher meeting", "kind": "event" }] },
+    { "month": "November 2026", "events": [{ "title": "Children's Day (14 November)", "kind": "event" }, { "title": "Science exhibition", "kind": "event" }] },
+    { "month": "December 2026", "events": [{ "title": "Half-yearly examinations", "kind": "exam" }, { "title": "Christmas celebration", "kind": "event" }, { "title": "Christmas holidays", "kind": "holiday" }] },
+    { "month": "January 2027", "events": [{ "title": "Pongal holidays", "kind": "holiday" }, { "title": "Republic Day (26 January)", "kind": "holiday" }, { "title": "Sports day", "kind": "event" }] },
+    { "month": "February 2027", "events": [{ "title": "Annual day", "kind": "event" }, { "title": "Model examinations for Classes 10 and 12", "kind": "exam" }] },
+    { "month": "March 2027", "events": [{ "title": "Public examinations for Classes 10 and 12 (as per government schedule)", "kind": "exam" }] },
+    { "month": "April 2027", "events": [{ "title": "Annual examinations", "kind": "exam" }, { "title": "Summer vacation begins", "kind": "holiday" }] }
+  ]
+}

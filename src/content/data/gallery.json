@@ -1,0 +1,94 @@
+{
+  "photos": [
+    {
+      "src": "/gallery/morning-assembly.svg",
+      "alt": "Illustration: morning assembly at Mount Carmel (placeholder for a photograph)",
+      "caption": "Students gather on the ground for prayer and the day's announcements.",
+      "title": "Morning assembly",
+      "album": "Placeholder illustrations",
+      "width": 1600,
+      "height": 1000,
+      "draft": true
+    },
+    {
+      "src": "/gallery/independence-day.svg",
+      "alt": "Illustration: independence day at Mount Carmel (placeholder for a photograph)",
+      "caption": "Flag hoisting on 15 August.",
+      "title": "Independence Day",
+      "album": "Placeholder illustrations",
+      "width": 1600,
+      "height": 1000,
+      "draft": true
+    },
+    {
+      "src": "/gallery/sports-day.svg",
+      "alt": "Illustration: sports day at Mount Carmel (placeholder for a photograph)",
+      "caption": "Track events and house competitions on the school ground.",
+      "title": "Sports day",
+      "album": "Placeholder illustrations",
+      "width": 1600,
+      "height": 1000,
+      "draft": true
+    },
+    {
+      "src": "/gallery/science-exhibition.svg",
+      "alt": "Illustration: science exhibition at Mount Carmel (placeholder for a photograph)",
+      "caption": "Working models and experiments made by students.",
+      "title": "Science exhibition",
+      "album": "Placeholder illustrations",
+      "width": 1600,
+      "height": 1000,
+      "draft": true
+    },
+    {
+      "src": "/gallery/tinkering-lab.svg",
+      "alt": "Illustration: atal tinkering lab at Mount Carmel (placeholder for a photograph)",
+      "caption": "Building and testing in the tinkering lab.",
+      "title": "Atal Tinkering Lab",
+      "album": "Placeholder illustrations",
+      "width": 1600,
+      "height": 1000,
+      "draft": true
+    },
+    {
+      "src": "/gallery/annual-day.svg",
+      "alt": "Illustration: annual day at Mount Carmel (placeholder for a photograph)",
+      "caption": "Dance, drama and music on the school stage.",
+      "title": "Annual day",
+      "album": "Placeholder illustrations",
+      "width": 1600,
+      "height": 1000,
+      "draft": true
+    },
+    {
+      "src": "/gallery/library-hour.svg",
+      "alt": "Illustration: library hour at Mount Carmel (placeholder for a photograph)",
+      "caption": "Reading time in the school library.",
+      "title": "Library hour",
+      "album": "Placeholder illustrations",
+      "width": 1600,
+      "height": 1000,
+      "draft": true
+    },
+    {
+      "src": "/gallery/monsoon.svg",
+      "alt": "Illustration: monsoon on campus at Mount Carmel (placeholder for a photograph)",
+      "caption": "Rain over the hills behind the school.",
+      "title": "Monsoon on campus",
+      "album": "Placeholder illustrations",
+      "width": 1600,
+      "height": 1000,
+      "draft": true
+    },
+    {
+      "src": "/gallery/christmas.svg",
+      "alt": "Illustration: christmas celebration at Mount Carmel (placeholder for a photograph)",
+      "caption": "Carols and decorations before the Christmas holidays.",
+      "title": "Christmas celebration",
+      "album": "Placeholder illustrations",
+      "width": 1600,
+      "height": 1000,
+      "draft": true
+    }
+  ]
+}

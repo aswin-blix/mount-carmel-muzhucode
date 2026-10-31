@@ -1,69 +1,123 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Hero } from "@/components/home/Hero";
+import { Counter } from "@/components/Counter";
+import { Timeline } from "@/components/Timeline";
+import { Stages } from "@/components/Stages";
+import { Facilities } from "@/components/Facilities";
+import { AdmissionsBand } from "@/components/AdmissionsBand";
+import { Visit } from "@/components/Visit";
+import { milestones, school, stats, udise } from "@/content/school";
+import { principalMessage } from "@/content/about";
+import { NewsList } from "@/components/NewsList";
+import { DraftMark } from "@/components/Draft";
+import { getAllNews } from "@/lib/news";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Hero />
+
+      <section aria-labelledby="intro-title" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-10 lg:py-32">
+        <div className="grid gap-14 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <h2 id="intro-title" className="sr-only">
+              About the school
+            </h2>
+            <p className="t-lede max-w-[30ch] text-balance">
+              Since {school.founded}, families in {school.place} have sent their children up the same road to Mount
+              Carmel. Today they learn in English from their first day in LKG to their Class 12 board exams.
+            </p>
+            <Link href="/about" className="link-underline mt-8 inline-block font-semibold">
+              Read the school&apos;s story
+            </Link>
+          </div>
+          <dl className="grid grid-cols-2 gap-x-8 gap-y-10 self-end lg:col-span-5">
+            {stats.map((s) => (
+              <div key={s.label} className="border-t-2 border-forest pt-4">
+                <dt className="sr-only">{s.label}</dt>
+                <dd>
+                  <span className="block font-serif text-[clamp(2.8rem,5vw,4rem)] leading-none text-leaf">
+                    <Counter value={s.value} suffix={s.suffix} />
+                  </span>
+                  <span className="mt-2 block text-ink-muted">{s.label}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <Timeline items={milestones} heading="From a primary school to Class 12, one step at a time" />
+
+      <section aria-labelledby="stages-title" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-10 lg:py-32">
+        <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <h2 id="stages-title" className="t-h2 max-w-xl">
+            Fourteen years, one campus
+          </h2>
+          <p className="max-w-md text-ink-muted">
+            English medium throughout, following the {school.board}. Tamil is taught as a language from the start.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <Stages />
+        <Link href="/academics" className="link-underline mt-10 inline-block font-semibold">
+          See how each stage is taught
+        </Link>
+      </section>
+
+      <section aria-labelledby="campus-title" className="bg-paper py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="mb-12 grid gap-6 lg:grid-cols-12">
+            <h2 id="campus-title" className="t-h2 lg:col-span-6">
+              Labs, books and open ground
+            </h2>
+            <p className="text-ink-muted lg:col-span-5 lg:col-start-8 lg:self-end">
+              {udise.blocks} blocks, {udise.classrooms} classrooms, an Atal Tinkering Lab for young makers, and a
+              campus that runs partly on the sun and saves the monsoon rain.
+            </p>
+          </div>
+          <Facilities limit={6} />
+          <Link href="/campus" className="link-underline mt-10 inline-block font-semibold">
+            Everything on campus
+          </Link>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section aria-labelledby="principal-title" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-10 lg:py-32">
+        <div className="grid gap-10 lg:grid-cols-12">
+          <h2 id="principal-title" className="font-serif text-2xl text-leaf lg:col-span-3">
+            From the principal
+            <DraftMark show={principalMessage.draft} />
+          </h2>
+          <div className="lg:col-span-8 lg:col-start-5">
+            <blockquote className="t-lede text-balance">{principalMessage.paragraphs[1]}</blockquote>
+            <Link href="/about/principal" className="link-underline mt-8 inline-block font-semibold">
+              Read the principal&apos;s message
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="news-title" className="bg-paper py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
+            <h2 id="news-title" className="t-h2">
+              News and events
+            </h2>
+            <Link href="/news" className="btn btn-forest">
+              All news
+            </Link>
+          </div>
+          <NewsList posts={getAllNews().slice(0, 3)} />
+        </div>
+      </section>
+
+      <div className="py-24 lg:py-32">
+        <AdmissionsBand />
+      </div>
+
+      <section aria-label="Location" className="mx-auto max-w-7xl px-4 pb-8 sm:px-6 lg:px-10">
+        <Visit />
+      </section>
+    </>
   );
 }

@@ -1,26 +1,215 @@
 @import "tailwindcss";
+@import "lenis/dist/lenis.css";
 
+/*
+ * Palette drawn from the place: Western Ghats foothill greens, the brown of
+ * the Carmelite habit, and the yellow of kanikonna (golden shower) blossom.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --forest: #123b2c;
+  --leaf: #2f7a4f;
+  --fern: #5e9c74;
+  --sage: #9dc3a8;
+  --mist: #eaf1ea;
+  --sky: #d6e8e6;
+  --carmel: #5b3f2a;
+  --gold: #f2b90c;
+  --gold-soft: #fbe7a6;
+  --paper: #ffffff;
+  --ink-muted: #3f5a4d;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-forest: var(--forest);
+  --color-leaf: var(--leaf);
+  --color-fern: var(--fern);
+  --color-sage: var(--sage);
+  --color-mist: var(--mist);
+  --color-sky: var(--sky);
+  --color-carmel: var(--carmel);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-paper: var(--paper);
+  --color-ink-muted: var(--ink-muted);
+  --font-serif: var(--font-young-serif), Georgia, serif;
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+  --font-tamil: var(--font-hind-madurai), "Noto Sans Tamil", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer base {
+html {
+  background: var(--mist);
+  color: var(--forest);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--mist);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--forest);
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+}
+
+@layer components {
+/* Modular type scale (perfect fourth, 1.333) */
+.t-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+}
+.t-h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+.t-h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.2vw, 3.16rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+.t-h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.78rem);
+  line-height: 1.2;
+}
+.t-lede {
+  font-family: var(--font-serif);
+  font-size: clamp(1.45rem, 2.6vw, 2.1rem);
+  line-height: 1.32;
+  letter-spacing: -0.01em;
+}
+.prose-measure {
+  max-width: 64ch;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--forest);
+}
+.btn-gold:hover {
+  background: #ffcb2e;
+}
+.btn-forest {
+  background: var(--forest);
+  color: var(--paper);
+}
+.btn-forest:hover {
+  background: var(--leaf);
+}
+.btn-ghost {
+  box-shadow: inset 0 0 0 1.5px currentColor;
+}
+.btn-ghost:hover {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.link-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--gold);
+}
+.link-underline:hover {
+  text-decoration-color: currentColor;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+  }
+}
+.page-enter {
+  animation: page-enter 0.45s ease-out;
+}
+
+/* Markdown articles (news) */
+.prose-article {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--ink-muted);
+}
+.prose-article > * + * {
+  margin-top: 1.25em;
+}
+.prose-article h2,
+.prose-article h3 {
+  font-family: var(--font-serif);
+  color: var(--forest);
+  line-height: 1.2;
+  margin-top: 2em;
+}
+.prose-article h2 {
+  font-size: 1.78rem;
+}
+.prose-article h3 {
+  font-size: 1.33rem;
+}
+.prose-article ul,
+.prose-article ol {
+  padding-left: 1.4em;
+}
+.prose-article ul {
+  list-style: disc;
+}
+.prose-article ol {
+  list-style: decimal;
+}
+.prose-article li + li {
+  margin-top: 0.5em;
+}
+.prose-article li::marker {
+  color: var(--leaf);
+}
+.prose-article a {
+  color: var(--forest);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
+}
+.prose-article strong {
+  color: var(--forest);
+}
+.prose-article img {
+  border-radius: 20px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

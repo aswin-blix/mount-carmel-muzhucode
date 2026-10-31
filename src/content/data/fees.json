@@ -1,0 +1,29 @@
+{
+  "draft": true,
+  "academicYear": "2027–28",
+  "intro": "Fees for private schools in Tamil Nadu are fixed by the Tamil Nadu Private Schools Fee Determination Committee. The school office will give you the approved fee for your child's class.",
+  "components": [
+    { "name": "Tuition fee", "body": "Covers teaching for the academic year, as approved by the fee committee." },
+    { "name": "Books and notebooks", "body": "State Board textbooks and school notebooks for the year." },
+    { "name": "Uniform", "body": "School uniform, PE kit, tie, belt and identity card." },
+    { "name": "Transport", "body": "Optional. Charged only for students who use the school bus." },
+    { "name": "Examination and activities", "body": "Term examinations, lab consumables and co-curricular activities." }
+  ],
+  "schedule": [
+    { "instalment": "First term", "due": "At admission or in June" },
+    { "instalment": "Second term", "due": "September" },
+    { "instalment": "Third term", "due": "December" }
+  ],
+  "byClass": [
+    { "classes": "LKG and UKG", "amount": null },
+    { "classes": "Classes 1 to 5", "amount": null },
+    { "classes": "Classes 6 to 8", "amount": null },
+    { "classes": "Classes 9 and 10", "amount": null },
+    { "classes": "Classes 11 and 12", "amount": null }
+  ],
+  "notes": [
+    "Pay fees at the school office and keep the receipt.",
+    "Fees once paid are refunded only as allowed by the rules of the fee committee.",
+    "Speak to the principal in confidence if you are having difficulty paying."
+  ]
+}
